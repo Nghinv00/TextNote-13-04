@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_note"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nghinv.textnote.Sqlite.NoteActivity"
+    android:background="@color/colorNewNote"  >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relaTopLayout"
+        android:background="@drawable/notetop"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTitie"
+            android:textSize="18sp"
+            android:hint="@string/titie"
+
+            android:layout_marginLeft="0dp"
+            android:maxLines="1"
+            android:maxLength="50"
+            android:imeOptions="actionNext"/>
+        <TextView
+            android:id="@+id/notelist_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10sp"
+            android:textSize="18sp"
+            android:textColor="@color/colorBackgroundNewNote"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relaTopLayout"
+        android:orientation="vertical">
+
+        <com.nghinv.textnote.Sqlite.LineEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editNote"
+            android:inputType="textMultiLine|textImeMultiLine"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:textSize="20sp"
+            android:hint="Nội dung ghi chú"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:maxLength="250"
+            android:textColorHint="#808080"
+            android:textColor="#696969"
+            android:gravity="top"
+            android:maxLines="26"  />
+    </LinearLayout>
+
+</RelativeLayout>

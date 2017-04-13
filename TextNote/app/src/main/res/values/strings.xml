@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TextNote</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="about">service-API </string>
+    <string name="no_title">Tiêu Đề Ghi chú</string>
+    <string name="titie">Tiêu Đề</string>
+    <string name="menu_delete">Xóa ghi chú</string>
+    <string name="menu_add">Tạo Ghi Chú</string>
+    <string name="main_sort">Sắp xếp </string>
+    <string name="main_filterlist">Lọc DS</string>
+    <string name="menu_chitiet">Chi Tiết</string>
+    <string name="menu_ngaytao">Ngày tạo</string>
+    <string name="API_KEY">2DC074FA-794B-618D-FF99-0509C7525C00</string>
+
+</resources>

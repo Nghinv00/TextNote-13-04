@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nghinv.textnote.Sqlite.MainActivity"
+    android:background="@drawable/notelist">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewTop"
+        android:background="@color/colorToolbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Danh Sách Ghi Chú"
+        android:textSize="20dp"
+        android:padding="10dp" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@android:id/list"
+        android:background="@color/colorBackgroundNewNote"
+        android:divider="@color/colorDividerNewNote"
+        android:dividerHeight="1sp"
+        android:footerDividersEnabled="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtViewTop">
+    </ListView>
+    <LinearLayout
+        android:id="@+id/linerAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_new_pressed" />
+    </LinearLayout>
+
+</RelativeLayout>
