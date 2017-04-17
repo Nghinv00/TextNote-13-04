@@ -2,7 +2,7 @@
     <string name="app_name">TextNote</string>
     <string name="save">Save</string>
     <string name="delete">Delete</string>
-    <string name="about">service-API </string>
+    <string name="about">Thông Tin</string>
     <string name="no_title">Tiêu Đề Ghi chú</string>
     <string name="titie">Tiêu Đề</string>
     <string name="menu_delete">Xóa ghi chú</string>
@@ -12,5 +12,5 @@
     <string name="menu_chitiet">Chi Tiết</string>
     <string name="menu_ngaytao">Ngày tạo</string>
     <string name="API_KEY">2DC074FA-794B-618D-FF99-0509C7525C00</string>
-
+    <string name="facebook_app_id">779150935568024</string>
 </resources>

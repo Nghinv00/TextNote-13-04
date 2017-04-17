@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@android:id/list"
-        android:background="@color/colorBackgroundNewNote"
+        android:background="#DCDCDC"
         android:divider="@color/colorDividerNewNote"
         android:dividerHeight="1sp"
         android:footerDividersEnabled="true"

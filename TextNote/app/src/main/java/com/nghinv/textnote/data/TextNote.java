@@ -1,12 +1,13 @@
 package com.nghinv.textnote.data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by NghiNV on 12/04/2017.
  */
 
-public class TextNote {
+public class TextNote implements Serializable {
     private String objectId;
     private String note;
     private String title;
@@ -68,4 +69,5 @@ public class TextNote {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
+
 }

@@ -19,8 +19,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nghinv.textnote.Sqlite.NoteAdapter;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -33,7 +31,7 @@ public class NoteActivity extends Activity {
     EditText lineEditText;
     Long rowId;
     private Cursor cursor;
-     NoteAdapter noteAdapter;
+    private NoteAdapter noteAdapter;
     final Context context = this;
 
     @Override
@@ -45,7 +43,7 @@ public class NoteActivity extends Activity {
         setContentView(R.layout.activity_note);
         setTitle(R.string.app_name);
         editTitle = (EditText) findViewById(R.id.editTitie);
-        lineEditText = (EditText) findViewById(R.id.editNote);
+        lineEditText = (EditText) findViewById(R.id.lineEditText);
         dateText = (TextView) findViewById(R.id.notelist_date);
         /**
          *
@@ -86,7 +84,7 @@ public class NoteActivity extends Activity {
 
     }
 
-    public static class LineEditText extends android.support.v7.widget.AppCompatEditText {
+    public static class LineEditText extends EditText {
         // We need this constructor for LayoutInflater
         private Paint mPaint = new Paint();
 
@@ -148,20 +146,20 @@ public class NoteActivity extends Activity {
             alertDialogBuilder.setMessage("Click vào yes để xóa ghi chú");
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog,int id) {
-                    // if this button is clicked, close
-                    // current activity
-                    NoteActivity.this.finish();
-                }
-            });
+                        public void onClick(DialogInterface dialog,int id) {
+                            // if this button is clicked, close
+                            // current activity
+                            NoteActivity.this.finish();
+                        }
+                    });
             alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog,int id) {
-                    // if this button is clicked, just close
-                    // the dialog box and do nothing
-                    dialog.cancel();
-                    return;
-                }
-            });
+                        public void onClick(DialogInterface dialog,int id) {
+                            // if this button is clicked, just close
+                            // the dialog box and do nothing
+                            dialog.cancel();
+                            return;
+                        }
+                    });
             // create alert dialog
             AlertDialog alertDialog = alertDialogBuilder.create();
             // show it
@@ -170,16 +168,16 @@ public class NoteActivity extends Activity {
 
         if (rowId == null) {
             long id = noteAdapter.createNode(title, note, curDate);
-            if (id != -1 ) {
-                rowId = id;
-            }
+                if (id != -1 ) {
+                    rowId = id;
+                }
+                else {
+                    Log.e("saveState", "Tạo note thất bại");
+                    }
+                }
             else {
-                Log.e("saveState", "Tạo note thất bại");
-            }
-        }
-        else {
-            boolean check = noteAdapter.updateNote(rowId, title, note, curDate);
-            if ( check == false)
+                boolean check = noteAdapter.updateNote(rowId, title, note, curDate);
+                if ( check == false)
                 Log.e("saveState", "Tạo note thất bại");
         }
     }

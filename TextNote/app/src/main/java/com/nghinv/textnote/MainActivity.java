@@ -1,9 +1,12 @@
-package com.nghinv.textnote.Sqlite;
+package com.nghinv.textnote;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,22 +17,18 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.nghinv.textnote.NoteActivity;
-import com.nghinv.textnote.R;
-
 public class MainActivity extends ListActivity {
     // public class MainActivity extends ListActivity {
     static final int TAO_NOTEACTIVITY_THANHCONG = 0;
     static final int MO_NOTEACTIVITY_THANHCONG = 1;
     static final int TRA_VE_KQ_NOTEACTIVITY_THANHCONG = 2;
     private static final int DELETE_ID = Menu.FIRST;
-    private  static final int NgayTao = Menu.CATEGORY_SECONDARY;
+    private  static final  int NgayTao = Menu.CATEGORY_SECONDARY;
     private NoteAdapter noteAdapter;
     Button btnAdd;
     Cursor cursor;
     String time;
     Cursor cursor1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +71,6 @@ public class MainActivity extends ListActivity {
                 return true;
             case  R.id.MenuLocDS:
                 return  true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -91,10 +89,8 @@ public class MainActivity extends ListActivity {
         cursor = noteAdapter.fetchAllNotes();
         startManagingCursor(cursor);
 
-       /* String[] from = new String[]{ NoteAdapter.KEY_TITILE, NoteAdapter.KEY_NOTE, NoteAdapter.KEY_DATE};
-        int[] values = new int[]{R.id.txtTitle, R.id.txtNote, R.id.txtDate};*/
-        String[] from = new String[]{ NoteAdapter.KEY_TITILE, NoteAdapter.KEY_NOTE};
-        int[] values = new int[]{R.id.txtTitle, R.id.txtNote};
+        String[] from = new String[]{ NoteAdapter.KEY_TITILE, NoteAdapter.KEY_NOTE, NoteAdapter.KEY_DATE};
+        int[] values = new int[]{R.id.txtTitle, R.id.txtNote, R.id.txtDate};
 
         SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.row_note,
                 cursor, from, values);
@@ -138,5 +134,4 @@ public class MainActivity extends ListActivity {
         fillData();
     }
 }
-
 

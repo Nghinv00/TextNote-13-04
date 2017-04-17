@@ -4,7 +4,7 @@
     android:id="@+id/activity_note"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nghinv.textnote.Sqlite.NoteActivity"
+    tools:context="com.nghinv.textnote.Sqlite.MainActivity"
     android:background="@color/colorNewNote"  >
 
     <RelativeLayout
@@ -43,23 +43,28 @@
         android:layout_below="@id/relaTopLayout"
         android:orientation="vertical">
 
-        <com.nghinv.textnote.Sqlite.LineEditText
+        <view
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/lineEditText"
+            class="com.nghinv.textnote.NoteActivity$LineEditText"
+            android:background="@android:color/transparent"
             android:inputType="textMultiLine|textImeMultiLine"
             android:fadingEdge="vertical"
             android:scrollbars="vertical"
             android:textSize="20sp"
             android:hint="Nội dung ghi chú"
+            android:layout_below="@+id/relaTopLayout"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:maxLength="250"
+            android:maxLength="1000"
             android:textColorHint="#808080"
             android:textColor="#696969"
             android:gravity="top"
             android:maxLines="30"
+
             />
     </LinearLayout>
 
